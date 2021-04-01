@@ -43,11 +43,12 @@ html {
     background: yellow;
     border-radius: 30px;
     margin-top: 10px;
+    justify-items: center;
 }
 
 .image{
-    height: 20vh;
-    width: 20vw;
+    height: 100px;
+    width: 100px;
     float: right;
 }
 
