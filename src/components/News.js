@@ -33,36 +33,30 @@ export default class FetchRandomUser extends React.Component {
       return (<div>didn't get a news</div>);
     }
 
+    var news = []
+
+    for(var i=0; i<this.state.news.length;i++){
+      news.push(
+      <div className="box" id="box">
+      <div className="name">#{this.state.news[i].source.name}</div>
+      <img className="image" src={this.state.news[i].urlToImage} alt=""/>
+      <div className="title">{this.state.news[i].title}</div>
+      <div className="author">-{this.state.news[i].author}</div><br></br>
+      <div className="desc">{this.state.news[i].description}</div>
+      <div className="url"><a href={this.state.news[i].url}>{this.state.news[i].url}</a></div>
+      <div className="publish">{this.state.news[i].publishedAt}</div>
+    </div>)
+    }
       
+    return <tbody>{
 
-
-
-
-    return (
       <div className="newsData">
-          <img className="logo" src={logo} alt="" />
-        <h1 className="heading">AGRINEWS</h1>
+      <img className="logo" src={logo} alt="" />
+      <h1 className="heading">AGRINEWS</h1>
+     {news}
+     </div>
 
-
-         <div className="box" id="box">
-          <div className="name">#{this.state.news[0].source.name}</div>
-          <img className="image" src={this.state.news[0].urlToImage} alt=""/>
-          <div className="title">{this.state.news[0].title}</div>
-        <div className="author">-{this.state.news[0].author}</div><br></br>
-        <div className="desc">{this.state.news[0].description}</div>
-        <div className="url"><a href={this.state.news[0].url}>{this.state.news[0].url}</a></div>
-        <div className="publish">{this.state.news[0].publishedAt}</div>
-       </div>
-
-
-
-
-
-
-    </div>
-
-    );
-
+  }</tbody>
 
 
 
